@@ -7,22 +7,53 @@
 
 import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ContentView: View {
+
+    @State private var items = [String]()
 
     var body: some View {
         VStack {
             HStack {
-                Button("- db") {
+                Button(action: {
+                    self.addItem()
+                }) {
+                    Text("추가").foregroundColor(.black).padding()
                 }
-                Button("+ db") {
+                .border(Color.black, width: 1)
+
+                Button(action: {
+                    self.removeItem()
+                }) {
+                    Text("삭제").foregroundColor(.black).padding()
+                }
+                .border(Color.black, width: 1)
+
+            }.padding()
+
+            List {
+                ForEach(items, id: \.self) { item in
+                    Text(item)
                 }
             }
-            .buttonStyle(.borderedProminent)
         }
-        .padding()
+    }
+
+    // 데이터 추가 메소드
+    func addItem() {
+        let newItem = "Item \(items.count + 1)"
+        items.append(newItem)
+    }
+
+    // 데이터 삭제 메소드
+    func removeItem() {
+        if !items.isEmpty {
+            items.removeLast()
+        }
     }
 }
+
 
 #Preview {
     ContentView()
