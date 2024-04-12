@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B2CD9E02BC8C8C200C4DEDA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CD9DF2BC8C8C200C4DEDA /* Item.swift */; };
 		6B382C5C2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B382C5B2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift */; };
 		6B382C5E2BBE90BC000FE2D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B382C5D2BBE90BC000FE2D0 /* ContentView.swift */; };
 		6B382C602BBE90BD000FE2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B382C5F2BBE90BD000FE2D0 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B2CD9DF2BC8C8C200C4DEDA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6B382C582BBE90BC000FE2D0 /* SwiftDataTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B382C5B2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataTCAApp.swift; sourceTree = "<group>"; };
 		6B382C5D2BBE90BC000FE2D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B2CD9DE2BC8C8BA00C4DEDA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				6B2CD9DF2BC8C8C200C4DEDA /* Item.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		6B382C4F2BBE90BC000FE2D0 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +61,7 @@
 		6B382C5A2BBE90BC000FE2D0 /* SwiftDataTCA */ = {
 			isa = PBXGroup;
 			children = (
+				6B2CD9DE2BC8C8BA00C4DEDA /* Entity */,
 				6B382C5B2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift */,
 				6B382C5D2BBE90BC000FE2D0 /* ContentView.swift */,
 				6B382C5F2BBE90BD000FE2D0 /* Assets.xcassets */,
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B382C5E2BBE90BC000FE2D0 /* ContentView.swift in Sources */,
+				6B2CD9E02BC8C8C200C4DEDA /* Item.swift in Sources */,
 				6B382C5C2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var items = [String]()
+    @State private var items = [Item]()
 
     var body: some View {
         VStack {
@@ -33,8 +33,8 @@ struct ContentView: View {
             }.padding()
 
             List {
-                ForEach(items, id: \.self) { item in
-                    Text(item)
+                ForEach(items) { item in
+                    Text(item.name) // Item의 name 속성 표시
                 }
             }
         }
@@ -42,7 +42,7 @@ struct ContentView: View {
 
     // 데이터 추가 메소드
     func addItem() {
-        let newItem = "Item \(items.count + 1)"
+        let newItem = Item(name: "Item \(items.count + 1)")
         items.append(newItem)
     }
 
