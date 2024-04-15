@@ -31,6 +31,20 @@ struct ContentView: View {
                 }
                 .border(Color.black, width: 1)
 
+                Button(action: {
+                    self.redoItem()
+                }) {
+                    Text("Redo").foregroundColor(.black).padding()
+                }
+                .border(Color.black, width: 1)
+
+                Button(action: {
+                    self.undoItem()
+                }) {
+                    Text("Undo").foregroundColor(.black).padding()
+                }
+                .border(Color.black, width: 1)
+
             }.padding()
 
             List {
@@ -62,6 +76,18 @@ struct ContentView: View {
             DBManager.shared.removeItem(lastItem)
             fetchItems()
         }
+    }
+
+    // 데이터 Redo
+    func redoItem() {
+        DBManager.shared.redo()
+        fetchItems()
+    }
+
+    // 데이터 Undo
+    func undoItem() {
+        DBManager.shared.undo()
+        fetchItems()
     }
 }
 

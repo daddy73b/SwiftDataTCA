@@ -19,6 +19,7 @@ final class DBManager {
     private init() {
         self.modelContainer = try! ModelContainer(for: Item.self)
         self.modelContext = modelContainer.mainContext
+        self.modelContext.undoManager = UndoManager()
     }
 
     func appendItem(item: Item) {
@@ -47,5 +48,13 @@ final class DBManager {
     func removeLast() {
         guard let lastItem = fetchItems().last else { return }
         removeItem(lastItem)
+    }
+
+    func undo() {
+        modelContext.undoManager?.undo()
+    }
+
+    func redo() {
+        modelContext.undoManager?.redo()
     }
 }
