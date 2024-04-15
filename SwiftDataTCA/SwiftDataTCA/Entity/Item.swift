@@ -6,8 +6,16 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Item: Identifiable {
-    var id = UUID() // UUID
-    var name: String // 문자열 값
+@Model
+class Item: Identifiable{
+
+    @Attribute(.unique) var id: UUID
+    var name: String
+
+    init(id: UUID = UUID(), name: String){
+        self.id = id
+        self.name = name
+    }
 }
