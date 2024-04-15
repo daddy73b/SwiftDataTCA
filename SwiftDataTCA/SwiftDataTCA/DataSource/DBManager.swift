@@ -17,7 +17,7 @@ final class DBManager {
 
     @MainActor
     private init() {
-        self.modelContainer = try! ModelContainer(for: Item.self, configurations: .init(isStoredInMemoryOnly: true))
+        self.modelContainer = try! ModelContainer(for: Item.self)
         self.modelContext = modelContainer.mainContext
         self.modelContext.undoManager = UndoManager()
     }
