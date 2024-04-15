@@ -12,6 +12,7 @@
 		6B382C5E2BBE90BC000FE2D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B382C5D2BBE90BC000FE2D0 /* ContentView.swift */; };
 		6B382C602BBE90BD000FE2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B382C5F2BBE90BD000FE2D0 /* Assets.xcassets */; };
 		6B382C632BBE90BD000FE2D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B382C622BBE90BD000FE2D0 /* Preview Assets.xcassets */; };
+		6BB2F5472BCCB16500A942D8 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2F5462BCCB16500A942D8 /* DBManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		6B382C5D2BBE90BC000FE2D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B382C5F2BBE90BD000FE2D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B382C622BBE90BD000FE2D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6BB2F5462BCCB16500A942D8 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		6B382C5A2BBE90BC000FE2D0 /* SwiftDataTCA */ = {
 			isa = PBXGroup;
 			children = (
+				6BB2F5452BCCB14C00A942D8 /* DataSource */,
 				6B2CD9DE2BC8C8BA00C4DEDA /* Entity */,
 				6B382C5B2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift */,
 				6B382C5D2BBE90BC000FE2D0 /* ContentView.swift */,
@@ -76,6 +79,14 @@
 				6B382C622BBE90BD000FE2D0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6BB2F5452BCCB14C00A942D8 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				6BB2F5462BCCB16500A942D8 /* DBManager.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 				6B382C5E2BBE90BC000FE2D0 /* ContentView.swift in Sources */,
 				6B2CD9E02BC8C8C200C4DEDA /* Item.swift in Sources */,
 				6B382C5C2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift in Sources */,
+				6BB2F5472BCCB16500A942D8 /* DBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

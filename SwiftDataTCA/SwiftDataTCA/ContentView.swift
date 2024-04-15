@@ -11,9 +11,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @Environment(\.modelContext)
-    private var modelContext
-
     @State 
     private var items: [Item] = []
 
@@ -49,35 +46,21 @@ struct ContentView: View {
 
     // 저장된 아이템
     func fetchItems() {
-        do {
-            self.items = try modelContext.fetch(FetchDescriptor<Item>())
-        } catch {
-            fatalError(error.localizedDescription)
-        }
+        self.items = DBManager.shared.fetchItems()
     }
 
     // 데이터 추가 메소드
     func addItem() {
-        let newItem = Item(name: "Item \(items.count + 1)")
-        modelContext.insert(newItem)
-        do {
-            try modelContext.save()
-            fetchItems() // 데이터베이스에서 아이템을 다시 가져옴
-        } catch {
-            fatalError(error.localizedDescription)
-        }
+        let newItem = Item(index: DBManager.shared.fetchItems().count)
+        DBManager.shared.appendItem(item: newItem)
+        fetchItems()
     }
 
     // 데이터 삭제 메소드
     func removeItem() {
         if let lastItem = items.last {
-            modelContext.delete(lastItem)
-            do {
-                try modelContext.save()
-                fetchItems() // 데이터베이스에서 아이템을 다시 가져옴
-            } catch {
-                fatalError(error.localizedDescription)
-            }
+            DBManager.shared.removeItem(lastItem)
+            fetchItems()
         }
     }
 }

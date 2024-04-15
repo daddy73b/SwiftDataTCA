@@ -13,9 +13,14 @@ class Item: Identifiable{
 
     @Attribute(.unique) var id: UUID
     var name: String
+    var index: Int
 
-    init(id: UUID = UUID(), name: String){
+    init(
+        id: UUID = UUID(),
+        index: Int
+    ){
         self.id = id
-        self.name = name
+        self.index = index
+        self.name = "item \(index)"
     }
 }
