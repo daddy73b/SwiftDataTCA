@@ -17,10 +17,12 @@ final class DBManager {
 
     @MainActor
     private init() {
-        self.modelContainer = try! ModelContainer(for: Item.self)
+        self.modelContainer = try! ModelContainer(for: Group.self)
         self.modelContext = modelContainer.mainContext
         self.modelContext.undoManager = UndoManager()
     }
+
+    // MARK: Item
 
     func appendItem(item: Item) {
         modelContext.insert(item)
