@@ -7,91 +7,64 @@
 
 import SwiftUI
 import SwiftData
-import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
 
-    @State 
-    private var items: [Item] = []
+    let store: StoreOf<Feature>
 
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    self.addItem()
-                }) {
-                    Text("추가").foregroundColor(.black).padding()
-                }
-                .border(Color.black, width: 1)
+        WithViewStore(store, observe: { $0 }) { viewStore in
+            VStack {
+                HStack {
+                    Button(action: {
+                        viewStore.send(.plusDBTap)
+                    }) {
+                        Text("추가").foregroundColor(.black).padding()
+                    }
+                    .border(Color.black, width: 1)
 
-                Button(action: {
-                    self.removeItem()
-                }) {
-                    Text("삭제").foregroundColor(.black).padding()
-                }
-                .border(Color.black, width: 1)
+                    Button(action: {
+                        viewStore.send(.minusDBTap)
+                    }) {
+                        Text("삭제").foregroundColor(.black).padding()
+                    }
+                    .border(Color.black, width: 1)
 
-                Button(action: {
-                    self.redoItem()
-                }) {
-                    Text("Redo").foregroundColor(.black).padding()
-                }
-                .border(Color.black, width: 1)
+                    Button(action: {
+                        viewStore.send(.redoDBTap)
+                    }) {
+                        Text("Redo").foregroundColor(.black).padding()
+                    }
+                    .border(Color.black, width: 1)
 
-                Button(action: {
-                    self.undoItem()
-                }) {
-                    Text("Undo").foregroundColor(.black).padding()
-                }
-                .border(Color.black, width: 1)
+                    Button(action: {
+                        viewStore.send(.undoDBTap)
+                    }) {
+                        Text("Undo").foregroundColor(.black).padding()
+                    }
+                    .border(Color.black, width: 1)
 
-            }.padding()
+                }.padding()
 
-            List {
-                ForEach(items) { item in
-                    Text(item.name) // Item의 name 속성 표시
+                List {
+                    ForEach(viewStore.items) { item in
+                        Text(item.name)
+                    }
                 }
             }
         }
-        .onAppear {
-            self.fetchItems()
-        }
-    }
-
-    // 저장된 아이템
-    func fetchItems() {
-        self.items = DBManager.shared.fetchItems()
-    }
-
-    // 데이터 추가 메소드
-    func addItem() {
-        let newItem = Item(index: DBManager.shared.fetchItems().count)
-        DBManager.shared.appendItem(item: newItem)
-        fetchItems()
-    }
-
-    // 데이터 삭제 메소드
-    func removeItem() {
-        if let lastItem = items.last {
-            DBManager.shared.removeItem(lastItem)
-            fetchItems()
-        }
-    }
-
-    // 데이터 Redo
-    func redoItem() {
-        DBManager.shared.redo()
-        fetchItems()
-    }
-
-    // 데이터 Undo
-    func undoItem() {
-        DBManager.shared.undo()
-        fetchItems()
     }
 }
 
 
 #Preview {
-    ContentView()
+    ContentView(
+        store: Store(
+            initialState: Feature.State(),
+            reducer: {
+                Feature()
+            }
+        )
+    )
 }

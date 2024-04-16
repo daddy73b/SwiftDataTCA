@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Item: Identifiable{
+struct Item: Identifiable{
 
     @Attribute(.unique) var id: UUID
     var name: String
