@@ -14,14 +14,14 @@ class Group {
     @Attribute(.unique) 
     var id: UUID
 
-    @Relationship(deleteRule: .cascade)
-    var items: [Item]
+//    @Relationship(deleteRule: .cascade)
+//    var items: [Item]
 
     init(
-        id: UUID = UUID(),
-        items: [Item]
+        id: UUID = UUID()
+//        items: [Item]
     ){
         self.id = id
-        self.items = items
+//        self.items = items
     }
 }
