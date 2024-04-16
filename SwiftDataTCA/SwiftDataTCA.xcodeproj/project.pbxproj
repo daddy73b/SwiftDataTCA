@@ -13,7 +13,6 @@
 		6B382C602BBE90BD000FE2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B382C5F2BBE90BD000FE2D0 /* Assets.xcassets */; };
 		6B382C632BBE90BD000FE2D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B382C622BBE90BD000FE2D0 /* Preview Assets.xcassets */; };
 		6BB2F5472BCCB16500A942D8 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2F5462BCCB16500A942D8 /* DBManager.swift */; };
-		6BF201362BCE74F6000AA44A /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF201352BCE74F6000AA44A /* Group.swift */; };
 		C78A86552BCD617100327A89 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C78A86542BCD617100327A89 /* ComposableArchitecture */; };
 		C78A86572BCD630600327A89 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78A86562BCD630600327A89 /* Feature.swift */; };
 /* End PBXBuildFile section */
@@ -26,7 +25,6 @@
 		6B382C5F2BBE90BD000FE2D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B382C622BBE90BD000FE2D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6BB2F5462BCCB16500A942D8 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		6BF201352BCE74F6000AA44A /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		C78A86562BCD630600327A89 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +44,6 @@
 			isa = PBXGroup;
 			children = (
 				6B2CD9DF2BC8C8C200C4DEDA /* Item.swift */,
-				6BF201352BCE74F6000AA44A /* Group.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -178,7 +175,6 @@
 				C78A86572BCD630600327A89 /* Feature.swift in Sources */,
 				6B382C5C2BBE90BC000FE2D0 /* SwiftDataTCAApp.swift in Sources */,
 				6BB2F5472BCCB16500A942D8 /* DBManager.swift in Sources */,
-				6BF201362BCE74F6000AA44A /* Group.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
